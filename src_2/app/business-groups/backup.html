@@ -1,0 +1,507 @@
+<div id="loader" class="hide"></div>
+
+<div class="ContainerClient" [hidden]="enableClientNew">
+<div class="Tettt" ><!--*ngIf="HideContent"-->
+      <div  class="container-fluid" class="pager" *ngIf="HideContent">
+        <!-- <app-meta-data-menu></app-meta-data-menu>  -->
+                    
+                  <!-- <div class="alert alert-danger" role="alert">
+                            This is a primary alert—check it out!
+                          </div> -->
+                    
+      <!-- *ngIf="HideTable" -->
+        <div class="panel panel-default" [style.height]="heightTable + '%'"  id="Tabledata" [hidden]="zoomIncidentDetail" >
+            <div class="panel-heading" >
+              <!-- <div class="col-md-12"> -->
+              <div class="col-md-2">
+                <i class="fa fa-user"></i><span class="managedtable">MANAGE CLIENTS LIST</span>
+                <!--            <span class="glyphicon glyphicon-cog"></span>
+                <i class="fa fa-ellipsis-h"></i>
+                -->
+       
+              </div>  
+              <div class="col-md-9">
+                <!-- <div class="dropdown">
+          <button class="fa fa-ellipsis-h dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+         </ul>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+            
+      </ul>  
+        
+        </div> -->
+        <!-- <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Dropdown Example
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>    
+          </ul>
+        </div> -->
+      
+              </div>
+              <div class="col-md-2" id="tableoptions">
+                <span class="tdt">
+                    <!-- <app-add-new-task ></app-add-new-task> -->
+                </span>
+                <span class="tdt">
+                    <div>
+                        <div class="inlinemanagesubscribers">
+                            <button class="btn btn-info"(click)="MakeAddClientEnable()">&nbsp;<span class="glyphicon glyphicon-plus"></span>ADD</button>
+                            </div>
+                          <!-- <app-add-new-task ></app-add-new-task></div> -->
+                          
+                        <div class="inlinemanagesubscribers">
+                            <a class="fa fa-ellipsis-h
+                            dropdown-toggle" type="button" 
+                            id="dropdownMenuButton"
+                             data-toggle="dropdown"
+                             aria-haspopup="true"
+                             aria-expanded="false">
+              
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="filterTable('clientName')" >Client Name</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('clientId')">Client Id</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('shortName')">ShortName</a>
+                          </div>
+                        </div>
+          <div class="inlinemanagesubscribers">
+              <i class="fa fa-expand" (click)="zoomTableDetails()" *ngIf="!zoomTableDetail"></i>
+              <i class="fa fa-compress" (click)="zoomOutTableDetails()" *ngIf="zoomTableDetail" ></i>
+              
+      
+          </div>
+                        </div>
+                    
+                </span>
+                  
+              
+              <!-- </div> -->
+       <!--        <span  class="col-s-1">
+                  <div class="actionAddNewBusinessGroup">
+                     <div class="btn-group" id="actionAddNewBusinessGroup">
+                         <button type="button" class="btn btn-info" data-toggle="dropdown">
+                             Tools <span class="caret"></span>
+                            </button>
+                               <a type="btn dropdown-toggle" id="Actions" data-toggle="dropdown" href="#" >
+                                 Tools
+                                 <span class="caret"></span>
+                               </a> 
+                               <ul class="dropdown-menu">
+                               <li class="list" class="glyphicon glyphicon-print">Print</li>
+                               <li class="list"><i class="fa fa-file-pdf-o"></i>Save As PDF</li>
+                               <li class="list">Export to Excel</li>
+                               </ul>
+                           </div>
+                     
+                  </div>
+                           </span>-->
+       
+            </div>
+              </div>
+           <div>
+             <!-- align="left" -->
+              
+           </div>
+         <div class="tableContent" >
+             <!-- [style.height]="heightTable + 'px'" -->
+            <div class="panel-body" >
+               <table ng-style="{ 'height': yourModelToProvideValue }" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-border table-hover table-fixed-header">
+                    <thead>
+                      <tr class="TableHeader">
+                        <th class="TableHeaderth">BusinessGroupId</th>
+                        <th class="TableHeaderth">BusinessGroup</th>
+                        <th class="TableHeaderth">ClientName</th>
+                         <th class="TableHeaderth">Name</th>
+                         <th class="TableHeaderth">Remarks</th>
+                         <th class="TableHeaderth">ShortName</th>
+                         <!-- <th class="TableHeaderth">Date OF BIRTH</th>
+                         <th class="TableHeaderth">STATUS</th> -->
+                         <!-- <th class="TableHeaderth">SUMMARY</th> 
+                        <th class="TableHeaderth">SLA STATUS</th> -->
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                      <tr *ngFor="let person of persons;let i = index"
+                      [ngStyle]="{'background-color':person.businessGroupId===testvalue ? 'rgb(166, 223, 241)' : '' }"
+                      (click)="toggle(person)">
+                      <!-- [style.background-color]="getStyle(person)" -->
+                     <!-- <td class="tabletd"> -->
+                        <!-- <input type="radio" name="gender" value="person" checked (click)="selectedDetails(person)"> 
+                          showStyle = !showStyle;
+                          <br> -->
+                        <!-- <div class="form-check">
+                          <input name="102" type="radio" class="with-gap" id={{person.IncidetNo}} (click)="toggle(person)">
+                          </div>
+      
+                      </td>   -->
+                    <td class="tabletd">{{person.businessGroupId}}</td>
+                    <td class="tabletd">{{person.businessGroupDesc}}</td>
+                    <td class="tabletd"><span class={{person.Priority}}>{{person.clientDetails.clientName}}</span></td>  
+                    <td class="tabletd">{{person.name}}</td>
+                    <td class="tabletd">{{person.remarks}}</td>
+                    <td class="tabletd">{{person.shortName}}</td>
+                    <!-- <td class="tabletd">{{person.dateOfBirth}}</td>
+                    <td class="tabletd">{{person.status}}</td> -->
+      
+                    <!-- <td>
+                      <select class="Actions">
+                          <option>Action</option>
+                            <option value="volvo">Edit</option>
+                            <option value="saab">Delete</option>
+                            </select> 
+                            
+                                   <app-edit (click)="test(person)"></app-edit>
+            
+                    </td>   -->       
+                    <!-- <td class="tabletd">
+                        <a data-toggle="modal" href="#myModal" id="editButton" class="btn btn-info" (click)="sendMessagetest(person)">Edit</a>
+                      </td>              -->
+      
+                      </tr> 
+                    </tbody>
+                    </table>
+                  </div>
+                  
+                 
+        
+         </div>
+         
+      </div>
+      <div class="IncidentDetails" [hidden]="zoomTableDetail"  >
+          <div class="panel panel-default" ><!--*ngIf="DetailSelectedshow"-->
+           
+            <div class="panel-heading" id="incidentDetailHeader"><span class="col-md-2" id="" 
+              clickOutside (clickOutside)="closeDropDown()"
+              (click)="ManageClientsDropdownToggle()">
+              <i class="fa fa-list-alt"></i>Business Group Details <i class="fa fa-caret-down"></i>
+         
+              <ul class="hide" id="ManageClients">
+                <div class="searchresult">
+                <li class="ManageClientslist">Business Group info</li>
+                <li class="ManageClientslist">Business Units</li>
+                <li class="ManageClientslist">SubScriber info</li>
+                <li class="ManageClientslist">Manage groups</li>
+              </div>
+              </ul>
+             </span>
+              <div class="col-md-3 pull-right" id="">
+                <div id="buttonEdit">
+                    <div class="dropdown">
+                        <!-- <button *ngIf="IncidentEditable" class="btn btn-info"id="buttonEditbutton" (click)="edit()">Edit</button>&nbsp;&nbsp; -->
+                        <button id="ActionBtn" class="fa fa-edit" *ngIf="IncidentEditable" id="" (click)="edit()"></button>
+                        <button id="ActionBtn" class="fa fa-trash" data-toggle="modal" data-target="#exampleModalCenter"></button>
+                        <button id="ActionBtn" class="fa fa-save" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Updateclient()"></button>
+                        <button id="ActionBtn" class="fa fa-remove" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Cancel()"></button>
+                        <a class="fa fa-ellipsis-h dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="edit()" >edit</a>
+                            <a class="" id="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">
+                              delete
+                            </a>
+                            
+                            <!-- <a class="" id="dropdown-item" (click)="deleteClient()">delete</a> -->
+                          </div>
+        
+        
+      
+                        &nbsp;&nbsp; 
+                
+                        <i class="fa fa-expand" (click)="zoomProductIncidentDetails()"*ngIf="!zoomIncidentDetail"></i>
+                
+                        <i class="fa fa-compress" (click)="zoomOutIncidentDetails()" *ngIf="zoomIncidentDetail"></i>
+      
+                        
+      
+                      </div>
+      
+      
+      
+      
+            </div></div></div> 
+            <div class="panel-body" >
+              <!-- <div style="padding-left: 1000px;"><button class="btn btn-info"id="buttonEdit">Edit</button></div> -->
+              <!--  [style.height.px]="height" [style.height.px]="height"  -->
+              <div class="panel panel-default"  [style.height]="height + 'px'" >
+        
+                <div class="row">
+                   <div class="col-md-12">
+                     <div class="col-md-4">
+                       <div class="detailedselectedsinglefeild">
+                         <span style="float: left;"><label>BusinessID</label> :</span>
+
+                         
+                         <span *ngIf="!IncidentEditable">
+                           
+                            <input type="text" 
+                            class="form-control" 
+                            style="width: 56%"
+                            value={{DetailSelected.clientId}}
+                            readonly="true"
+                            ></span>
+                       <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.businessGroupId}}</span>
+                       </div>
+                       <div class="detailedselectedsinglefeild">
+                          <span style="float: left;">Business group Name<span style="padding-left: 25px;padding-right: 5px"> :</span></span>
+ 
+                          
+                          <span *ngIf="!IncidentEditable">
+                              <input type="text" 
+                              class="form-control" 
+                              style="width:56%;"
+                               value={{DetailSelected.clientName}}
+                               [(ngModel)]="businessgroupupdate">
+
+                        </span>
+                        <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.name}}</span>
+                        </div>
+
+                        <div class="detailedselectedsinglefeild">
+                            <span style="float: left;">Client Name<span style="padding-left: 25px;padding-right: 5px"> :</span></span>
+   
+                            
+                            <span *ngIf="!IncidentEditable">
+                                <input type="text" 
+                                class="form-control"
+                                style="width:57%;"
+                                  value={{DetailSelected.shortName}}
+                                  [(ngModel)]="shortNameupdate">
+                            </span>
+                          <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.clientDetails.clientName}}</span>
+                          </div>
+
+                        
+                     </div>
+                     <div class="col-md-4">
+                        <div class="detailedselectedsinglefeild">
+                           <span style="float: left;">Remarks<span style="padding-left: 48px;padding-right: 5px"> :</span></span>
+  
+                           
+                           <span *ngIf="!IncidentEditable">
+                              <input type="text"
+                                 class="form-control"
+                                 style="width:57%;"
+                                 value={{DetailSelected.remarks}}
+                                 
+                                 [(ngModel)]="remarksupdate"
+                                 >
+ 
+                         </span>
+                         <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.remarks}}</span>
+                         </div>
+ 
+                         <div class="detailedselectedsinglefeild">
+                             <span style="float: left;">Status<span style="padding-left: 60px;padding-right: 5px"> :</span></span>
+    
+                             
+                             <span *ngIf="!IncidentEditable">
+                                <input type="text" 
+                                class="form-control" 
+                                style="width:57%;" 
+                                value={{DetailSelected.status}}
+                                [(ngModel)]="isactiveupdate">
+                             </span>
+                           <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.isActive}}</span>
+                           </div>
+ 
+                           <div class="detailedselectedsinglefeild">
+                               <span style="float: left;">shortName<span style="padding-left: 61px;padding-right: 5px"> :</span></span>
+      
+                               
+                               <span *ngIf="!IncidentEditable">
+                                  <input type="text" 
+                                  class="form-control" 
+                                  style="width:57%;" 
+                                  value={{DetailSelected.phone}}
+                                  [(ngModel)]="phoneupdate">
+ 
+                                </span>
+                             <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.shortName}}</span>
+                             </div>
+   
+                         
+                      </div>
+
+                   </div>
+                 
+                  </div>
+                </div>   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+           </div>
+        </div>
+      </div>
+      
+      </div>
+      
+      </div>
+      <router-outlet></router-outlet>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Update Incident</h4>
+              </div>
+              <div class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn-secondary">Cancel</a>
+                <a href="#" class="btn btn-info">Update</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      <!-- test delete alert -->
+      
+      <!-- Modal -->
+      <div class="modal fade" 
+                id="exampleModalCenter" 
+                tabindex="-1" 
+                role="dialog" 
+                aria-labelledby="exampleModalCenterTitle" 
+                aria-hidden="true"
+                >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-exclamation-triangle"></i>  Warning !! </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="border:white">
+              Are you sure that you want to permanently delete the record ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn enabledGrayBtn" data-dismiss="modal" #deleteModal>Cancel</button>
+              <button type="button" class="btn btn-info enabledBtn" (click)="deleteClient()">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+<div id="DataContainer" class="ContainerClientLoginForm" [hidden]="!enableClientNew">
+
+    <!-- <div class="upperHeadingManageSubscribersText">
+        <span>
+            <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Manage Subscriber</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create Client</li>
+      </ol>
+    </nav>
+    
+        </span>
+    </div> -->
+    <!-- <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Success! Some code goes here </strong>
+      </div> -->
+    <div class="Form">
+    <div class="FormHeading">
+      <span class="sectionHead">Add New Client</span>
+        <span class="backtomainmenu" (click)="disableclientaddform()"><span class="fa fa-angle-left"></span><span>Back</span></span>
+ 
+      <!-- <section class="sectionHead">
+         <a class="unhideallContent" (click)=unhideContent()><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+    </section> -->
+  </div>
+    <div>
+      <div class="panel">
+            <form class="form-inline" [formGroup]="AddNewBusinessGroup" (ngSubmit)="AddBusinessGroup(AddNewBusinessGroup.getRawValue())">
+              <div class="row" id="FormFeilds">
+              <br><br><br>
+                <div class="col-md-6">
+                      <div class="clientNameblock">
+                        <label for="clientName">Business Group Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="clientName" class="form-control" id="clientName" placeholder="Enter clientName" name="clientName" formControlName="name">
+                        <span class="help-block" *ngIf="(AddNewBusinessGroup.get('name').touched ||
+                        AddNewBusinessGroup.get('name').dirty) &&
+                        AddNewBusinessGroup.get('name').errors">
+                      <span *ngIf="AddNewBusinessGroup.get('name').errors.required">
+                        BusinessGroup Name is  required.
+                      </span>
+    </span>
+                      </div>
+    
+                      <div class="shortNameBlock">
+                          <label for="shortName">Business group Short Name:</label>
+                          <input type="text" class="form-control" id="shortName" placeholder="Enter Short Name" name="ShortName" formControlName="shortName" >
+                          <span class="help-block" *ngIf="(AddNewBusinessGroup.get('shortName').touched ||
+                          AddNewBusinessGroup.get('shortName').dirty) &&
+                          AddNewBusinessGroup.get('shortName').errors">
+                        <span *ngIf="AddNewBusinessGroup.get('shortName').errors.required">
+                            short Name is  required.
+                        </span>
+      </span>
+    
+                        </div>
+                        <div class="isClientActiveBlock">
+                        
+                            <label for="shortName">Business group Short Name:</label>
+                            <input type="text" class="form-control" id="shortName" placeholder="Enter Short Name" name="ShortName" formControlName="shortName" >
+                            <span class="help-block" *ngIf="(AddNewBusinessGroup.get('shortName').touched ||
+                            AddNewBusinessGroup.get('shortName').dirty) &&
+                            AddNewBusinessGroup.get('shortName').errors">
+                          <span *ngIf="AddNewBusinessGroup.get('shortName').errors.required">
+                              short Name is  required.
+                          </span>
+        </span>           
+                        
+                        </div>
+    
+                </div>
+                <div class="col-md-6">
+    
+                  <div class="remarksBlock">
+                    <label for="remarks">Remarks:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="form-control" id="remarks" placeholder="Enter Remarks" name="remarks" formControlName="remarks" >
+                   </div>
+                  <div formGroupName="clientInfo"> 
+                    <label>select Client name</label>
+                      <select formControlName="clientId">
+                          <option *ngFor="let client of clientDetails" [ngValue]=""> {{client.clientName}} </option>
+                        </select>               
+                  </div>
+
+    
+    
+    
+                </div>
+    
+                </div>
+
+               <div class="addnewClientButtons">
+                <button type="submit" class="btn btn-info">submit</button> &nbsp;<button class="btn btn-info" (click)="disableclientaddform()">cancel</button>
+
+               </div>
+                <!-- <div class="UpdateCancelButton">
+                    <button type="button" class="btn btn-info">Update</button><button type="button" class="btn btn-info" (click)="hideForm()">Cancel</button>
+                  </div> -->
+    
+              </form>
+            </div>
+    
+          </div>
+          </div>
+    
+</div>

@@ -1,0 +1,120 @@
+body{
+    padding: 10px;
+    font-family: Graphik-Regular;
+}
+.test{
+    font-family: 'test';
+}
+.test1{
+    font-family: 'test1';
+}
+.test2{
+    font-family: 'test2';
+}
+.test3{
+    font-family: 'test3';
+}
+.test4{
+    font-family: 'test4';
+}
+.test5{
+    font-family: 'test5';
+}
+.test6{
+    font-family: 'test6';
+}
+.test7{
+    font-family: 'test7';
+}
+.test8{
+    font-family: 'test8';
+}
+@font-face {
+    font-family: 'Graphik-Black';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Black Italic.ttf');
+ }
+@font-face {
+    font-family: 'Graphik-Black';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Black.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Thin';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Thin.ttf');
+ }
+@font-face {
+    font-family: 'Graphik-Thin';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Thin Italic.ttf');
+ }
+@font-face {
+    font-family: 'Graphik-Semibold';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Semibold Italic.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Super';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Super.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Regular.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Regular-Italic';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Regular Italic.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Extralight';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Extralight.ttf');
+ }
+
+@font-face {
+    font-family: 'Graphik-Light';
+    src: url('/assets/Graphik_Family_TTF_MataData/Graphik-Light.ttf');
+ }
+ .radio-item {
+    display: inline-block;
+    position: relative;
+    padding: 0 6px;
+    margin: 10px 0 0;
+  }
+  
+  .radio-item input[type='radio'] {
+    display: none;
+  }
+  
+  .radio-item label {
+    color: #666;
+    font-weight: normal;
+  }
+  
+  .radio-item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    border: 2px solid #004c97;
+    background-color: transparent;
+  }
+  
+  .radio-item input[type=radio]:checked + label:after {
+    border-radius: 11px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    content: " ";
+    display: block;
+    background: #004c97;
+  }
+  .text-success{
+      background-color: aqua;
+  }

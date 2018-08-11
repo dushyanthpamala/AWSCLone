@@ -1,0 +1,357 @@
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+body {
+  overscroll-behavior-x: hide;
+  overflow:inherit;
+}
+
+footer {
+    /* padding: 1em; */
+    color: white;
+    background-color: #364150;
+    clear: left;
+    text-align: center;
+    font-size: 12px;
+    height: 25px;
+    padding: 2px;
+    // vertical-align: middle;
+    // line-height: 40px;
+  }
+  
+  .navbar-inverse {
+    background-color: white;
+    /* border-color: white; */
+  }
+  .navbar-form{
+    padding-left: 1150px;
+    padding-top: 30px;
+  }
+  
+  .gap200 {height: 50px; display: block;}
+  .progress{ height: 5px;}
+  /* .glyphicon{color: rgb(120, 121, 121); float: right} */
+  .glyphicon[_ngcontent-c1]{
+    float: right;
+    padding-left: 1em;
+  }
+  .badge{float: left
+  }
+  
+  
+  a {
+    -webkit-transition: all 150ms ease;
+    -moz-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+  }
+  a:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE7 */
+    opacity: 0.6;
+    text-decoration: none;
+  }
+  .container {
+    background: #FFFFFF;
+    margin: 40px auto;
+    padding: 20px 40px 50px;
+    max-width: 960px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-header {
+    background: #f9f9f9;
+    margin: -30px -40px 40px;
+    padding: 20px 40px;
+    border-top: 4px solid #ccc;
+    color: #999;
+    text-transform: uppercase;
+  }
+  .page-header h3 {
+    line-height: 0.88rem;
+    color: #000;
+  }
+  ul.thumbnails {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .caption-box h4 {
+    font-size: 0.94rem;
+    color: #444;
+  }
+  .caption-box p {
+    font-size: 0.75rem;
+    color: #999;
+  }
+  .btn.btn-mini {
+    font-size: 0.63rem;
+  }
+  
+  
+  
+  /* Control box
+  ------------------------------------------------ */
+  .control-box {
+    width: 100%;
+  }
+  .carousel-control{
+    background: #666 !important;
+    border: 0px;
+    border-radius: 0px;
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 100;
+    line-height: 18px;
+    opacity: 0.5;
+    padding: 4px 10px;
+    margin: 30px -20px 0;
+    height: 30px;
+    width: 30px;
+  }
+  
+  
+  
+  /* Mobile only
+  ------------------------------------------------ */
+  @media (max-width: 767px) {
+    .page-header { text-align: center; }
+  }
+  @media (max-width: 479px) {
+    .caption-box { word-break: break-all; }
+    ul.thumbnails li { margin-bottom: 30px; }
+  }
+  
+  
+  
+  /* ADD-ON
+  ------------------------------------------------ */
+  body:after{content:"less than 320px";font-size:1rem;font-weight:bold;position:fixed;bottom:0;width:100%;text-align:center;background-color:hsla(1,60%,40%,0.7);color:#fff;height:20px;padding-top:0;margin-left:0;left:0}@media only screen and (min-width:320px){body:after{content:"320 to 480px";background-color:hsla(90,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:480px){body:after{content:"480 to 768px";background-color:hsla(180,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:768px){body:after{content:"768 to 980px";background-color:hsla(270,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:980px){body:after{content:"980 to 1024px";background-color:hsla(300,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}@media only screen and (min-width:1024px){body:after{content:"1024 and up";background-color:hsla(360,60%,40%,0.7);height:20px;padding-top:0;margin-left:0}}
+  
+  ::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
+  ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+  
+  a, a:focus, a:active, a:hover, object, embed { outline: none; }
+  :-moz-any-link:focus { outline: none; }
+  input::-moz-focus-inner { border: 0; }
+  
+  
+  
+  
+  body {
+    /* just for this demo. */
+  
+    padding: 30px;
+    // overscroll-behavior-x: none !important;
+    // overflow: -webkit-paged-x;
+  }
+  
+  .btn {
+    /* just for this demo. */
+  
+    margin-top: 5px;
+  }
+  
+  .btn-arrow-right,
+  .btn-arrow-left {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  
+  .btn-arrow-right {
+    padding-left: 36px;
+  }
+  
+  .btn-arrow-left {
+    padding-right: 36px;
+  }
+  
+  .btn-arrow-right:before,
+  .btn-arrow-right:after,
+  .btn-arrow-left:before,
+  .btn-arrow-left:after {
+    /* make two squares (before and after), looking similar to the button */
+  
+    content: "";
+    position: absolute;
+    top: 5px;
+    /* move it down because of rounded corners */
+  
+    width: 22px;
+    /* same as height */
+  
+    height: 22px;
+    /* button_outer_height / sqrt(2) */
+  
+    background: inherit;
+    /* use parent background */
+  
+    border: inherit;
+    /* use parent border */
+  
+    border-left-color: transparent;
+    /* hide left border */
+  
+    border-bottom-color: transparent;
+    /* hide bottom border */
+  
+    border-radius: 0px 4px 0px 0px;
+    /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+  
+    -webkit-border-radius: 0px 4px 0px 0px;
+    -moz-border-radius: 0px 4px 0px 0px;
+  }
+  
+  .btn-arrow-right:before,
+  .btn-arrow-right:after {
+    transform: rotate(45deg);
+    /* rotate right arrow squares 45 deg to point right */
+  
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+  
+  .btn-arrow-left:before,
+  .btn-arrow-left:after {
+    transform: rotate(225deg);
+    /* rotate left arrow squares 225 deg to point left */
+  
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+  }
+  
+  .btn-arrow-right:before,
+  .btn-arrow-left:before {
+    /* align the "before" square to the left */
+    border-color: transparent;
+    left: -11px;
+  }
+  
+  .btn-arrow-right:after,
+  .btn-arrow-left:after {
+    /* align the "after" square to the right */
+  
+    right: -11px;
+  
+  }
+  
+  .btn-arrow-right:after,
+  .btn-arrow-left:before {
+    /* bring arrow pointers to front */
+  
+    z-index: 1;
+  }
+  
+  .btn-arrow-right:before,
+  .btn-arrow-left:after {
+    /* hide arrow tails background */
+    left: 11px;
+    /* background-color: white; */
+  }
+  .btn[_ngcontent-c1] {
+    margin-top: 0px;
+  }
+  
+  .red {
+    background-color: rgb(90, 89, 89);
+  }
+  b {
+    text-align: right;
+  }
+  
+  #time { float: right !important;
+    word-spacing: -10px;}
+  
+  
+  .well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #5bc0de;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  }
+  .city {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+  }
+  
+  /* carousel */
+  .media-carousel
+  {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+    margin-top: 30px;
+  }
+  /* Previous button  */
+  .media-carousel .carousel-control.left
+  {
+    left: -12px;
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    height: 40px;
+    width : 40px;
+    margin-top: 30px
+  }
+  /* Next button  */
+  .media-carousel .carousel-control.right
+  {
+    right: -12px !important;
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    height: 40px;
+    width : 40px;
+    margin-top: 30px
+  }
+  /* Changes the position of the indicators */
+  .media-carousel .carousel-indicators
+  {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+  }
+  /* Changes the colour of the indicators */
+  .media-carousel .carousel-indicators li
+  {
+    background: #c0c0c0;
+  }
+  .media-carousel .carousel-indicators .active
+  {
+    background: #333333;
+  }
+  .media-carousel img
+  {
+    width: 250px;
+    height: 100px
+  }
+  /* End carousel */
+  
+  .filterBy{
+    margin-bottom: 10px;
+    margin-left: 5px
+  }
+  #searchForm{
+    margin-right: 100px;
+  }
+  @media(max-width:1200px) {
+    #searchForm{
+      display: none;
+    }
+  }
+  

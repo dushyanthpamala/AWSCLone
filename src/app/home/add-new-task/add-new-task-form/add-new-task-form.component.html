@@ -1,0 +1,128 @@
+
+<div class="upperHeadingManageSubscribersText">
+    <span>
+        <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Manage Subscriber</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create Client</li>
+  </ol>
+</nav>
+
+    </span>
+</div>
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Success! Some code goes here </strong>
+  </div>
+<div class="Form">
+<div class="FormHeading"><span class="sectionHead">Subscriber Form</span>
+  <section class="sectionHead">
+     <a class="unhideallContent" (click)=unhideContent()><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+</section></div>
+<div>
+  <div class="panel">
+        <form class="form-inline" [formGroup]="AddNewTask" (ngSubmit)="uservalidateAndGetProdut(AddNewTask.getRawValue())">
+          <div class="row" id="FormFeilds">
+          <br><br><br>
+            <div class="col-md-6">
+                <!-- <div class="clientID">
+                    <label for="clientId" id="emailLabel">Client Id*:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="clientId" class="form-control" id="clientId" placeholder="Enter clientId" name="clientId" formControlName="clientId">
+                    <span class="help-block" *ngIf="(AddNewTask.get('clientId').touched ||
+                    AddNewTask.get('clientId').dirty) &&
+                    AddNewTask.get('clientId').errors">
+                  <span *ngIf="AddNewTask.get('clientId').errors.required" class="error">
+                      Client Id is  required.
+                  </span>
+</span>
+                  </div>
+ -->
+                  <div class="clientNameblock">
+                    <label for="clientName">Client Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="clientName" class="form-control" id="clientName" placeholder="Enter clientName" name="clientName" formControlName="clientName">
+                    <span class="help-block" *ngIf="(AddNewTask.get('clientName').touched ||
+                    AddNewTask.get('clientName').dirty) &&
+                    AddNewTask.get('clientName').errors">
+                  <span *ngIf="AddNewTask.get('clientName').errors.required">
+                      Client Name is  required.
+                  </span>
+</span>
+                  </div>
+
+                  <div class="shortNameBlock">
+                      <label for="shortName">Client Short Name:</label>
+                      <input type="text" class="form-control" id="shortName" placeholder="Enter Short Name" name="ShortName" formControlName="shortName" >
+                      <span class="help-block" *ngIf="(AddNewTask.get('shortName').touched ||
+                      AddNewTask.get('shortName').dirty) &&
+                      AddNewTask.get('shortName').errors">
+                    <span *ngIf="AddNewTask.get('shortName').errors.required">
+                        short Name is  required.
+                    </span>
+  </span>
+
+                    </div>
+                    <div class="isClientActiveBlock">
+                      <!-- <label for="isClientActive">ClientActive</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                      <!-- <button class="btn btn-info">yes</button><button class="btn btn-info">No</button>
+           -->
+           <!-- <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label> -->
+            <div class="phone" align="left" style="padding-left: 25px;">
+              <label for="phone" >Phone Number:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" class="phone" id="phone"  placeholder="Enter phone" name="phone" formControlName="phone" 
+               width="57%">
+             </div>
+
+                    </div>
+
+            </div>
+            <div class="col-md-6">
+
+              <div class="clientAddressBlock">
+                <label for="shortName">Client Address:</label>
+                <input type="text" class="clientAddressBlockInput" id="address" placeholder="Enter client Adrress" name="address" formControlName="address" >
+                <span class="help-block" *ngIf="(AddNewTask.get('address').touched ||
+                AddNewTask.get('address').dirty) &&
+                AddNewTask.get('address').errors">
+              <span *ngIf="AddNewTask.get('address').errors.required">
+                 client Adrress is  required.
+              </span>
+</span>
+
+              </div>
+              <div class="remarksBlock">
+                <label for="remarks">Remarks:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="remarksBlockInput" id="remarks" placeholder="Enter Remarks" name="remarks" formControlName="remarks" >
+               </div>
+
+               <!-- <div class="statusBlock">
+                <label for="status">Status:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+              </div> -->
+
+              <div class="dateOfBirth">
+                <label for="dateOfBirth">dateOfBirth:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter dateOfBirth" name="dateOfBirth" formControlName="dateOfBirth" >
+               </div>
+
+
+
+
+            </div>
+
+            </div>
+            <button type="submit">submit</button>
+            <!-- <div class="UpdateCancelButton">
+                <button type="button" class="btn btn-info">Update</button><button type="button" class="btn btn-info" (click)="hideForm()">Cancel</button>
+              </div> -->
+
+          </form>
+        </div>
+
+      </div>
+      </div>

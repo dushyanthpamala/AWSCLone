@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th  *ngFor="let header of BusinessGroupDetailsHeader" >{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stakeholder of stakeholderdetails;let i = index"  
+      id="togglecolor"
+      [ngStyle]="{'color':i===id ? 'white' : '','background-color':i===id ? '#364150' : '' }"
+      (click)="togglecolor(i)" (dblclick)="navigatetoStakeholder(stakeholder)">
+
+        <td>{{stakeholder.businessGroupId}}</td>
+        <td>{{stakeholder.name}}</td>
+        <td>{{stakeholder.clientDetails.clientName}}</td>
+        <td>{{stakeholder.shortName}}</td>
+        <td>{{stakeholder.remarks}}</td>
+      </tr>
+    </tbody>
+  </table>

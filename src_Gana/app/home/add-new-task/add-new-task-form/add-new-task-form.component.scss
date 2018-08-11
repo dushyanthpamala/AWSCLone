@@ -1,0 +1,157 @@
+.upperHeadingManageSubscribersText{
+    border-bottom: black;
+       border-bottom-style: solid;
+    border-bottom-width: thin;
+    }
+    .Form{
+        border: whitesmoke;
+        border-width: thin;
+        border-style: solid;
+        padding-left: 20px;
+        padding-right: 20px;
+        }
+    .FormHeading{
+    border: whitesmoke;
+    border-width: thin;
+    border-style: solid;
+    background-color: lightgrey;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration-style:solid;
+    font-size: 125%;
+    
+    
+    
+    }
+    .sectionHead{
+        display: inline;
+    }
+    .form-inline .form-control{
+        width: 300px;
+    }
+    .help-block{
+        color: red;
+    }
+    .clientID{
+        padding-top: 5%;
+    }
+    .clientNameblock{
+        padding-top: 20px;
+    }
+    .shortNameBlock{
+        padding-top: 20px;
+    }
+    .isClientActiveBlock{
+        padding-top: 20px;
+    }
+    .clientAddressBlockInput{
+        height: 100px;
+        width: 300px;
+    }
+    .remarksBlock{
+        padding-top: 20px;
+    }
+    .remarksBlockInput{
+        height: 100px;
+        width: 300px;
+    }
+    .statusBlock{
+        padding-top: 20px;
+    }
+    .gap{
+        height: 40px;
+    }
+    .FormFeilds{
+        padding-top: 60px;
+        top: 60px;
+    }
+    .form-group{
+        display: table-row;
+    }
+    .unhideallContent{
+        padding-left: 1070px;
+    
+    }
+    .UpdateCancelButton{
+        padding-left: 800px;
+    }
+    .alert {
+        padding: 20px;
+        background-color:#42bf6c;
+        color: white;
+        border-left-color: green;
+        border-left-width: 30px;
+        border-style: solid;
+    }
+    
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .closebtn:hover {
+        color: black;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .switch input {display:none;}
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      

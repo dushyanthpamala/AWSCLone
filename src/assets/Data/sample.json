@@ -1,0 +1,103 @@
+{"clients": [
+{
+"clientId": 1,
+"clientName": "Carman",
+"shortName": "Car",
+"isActive": true,
+"address": "Hennur",
+"remarks": "Manager",
+"status": "Active",
+"phone": "988888888",
+"dateOfBirth": "1997-06-05"
+},
+{
+"clientId": 2,
+"clientName": "Candy",
+"shortName": "Cany",
+"isActive": true,
+"address": "Hennur",
+"remarks": "Programmar",
+"status": "Active",
+"phone": "9979768876",
+"dateOfBirth": "2006-06-30"
+},
+{
+"clientId": 3,
+"clientName": "Carlos",
+"shortName": "Carl",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-06-08"
+},
+{
+"clientId": 4,
+"clientName": "Agnes",
+"shortName": "Agna",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-10-08"
+},
+{
+"clientId": 5,
+"clientName": "Balu",
+"shortName": "Balug",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-10-08"
+},
+{
+"clientId": 2,
+"clientName": "Candy",
+"shortName": "Cany",
+"isActive": true,
+"address": "Hennur",
+"remarks": "Programmar",
+"status": "Active",
+"phone": "9979768876",
+"dateOfBirth": "2006-06-30"
+},
+{
+"clientId": 3,
+"clientName": "Carlos",
+"shortName": "Carl",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-06-08"
+},
+{
+"clientId": 4,
+"clientName": "Agnes",
+"shortName": "Agna",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-10-08"
+},
+{
+"clientId": 5,
+"clientName": "Balu",
+"shortName": "Balug",
+"isActive": true,
+"address": "Kalyan nagar",
+"remarks": "Manager",
+"status": "Active",
+"phone": "9879879879",
+"dateOfBirth": "1997-10-08"
+}
+]
+
+}

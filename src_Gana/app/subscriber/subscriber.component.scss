@@ -1,0 +1,919 @@
+.navbar-inverse{
+    background-color: white;
+    border-color: white;
+    padding-top: 0.5px;
+
+
+.accenturelogo{
+    width: 180px;
+}
+
+.notificons{
+    // padding-left: 850px;
+    color: darkgray;
+    font-size: 20px;
+    float:right;
+
+    .badge-notify{
+        background:rgb(252, 109, 109);
+        // position:absolute;
+        top:0px;
+       }
+}
+
+.navbar-header{
+    display: inline-block;
+    margin-top: -10px;
+    .btn-group-sm>.btn, .btn-sm {
+        // padding: 5px 10px;
+        padding-left: 0.5px;
+        font-size: 11px;
+        line-height: 1.5;
+        border-radius: 3px;
+        background-color: black;
+        border-color: black
+    }
+    // .icons{
+    //     padding-left: 1050px;
+    //     padding-top: 50px;
+    //     .glyphicon glyphicon-user{
+    //         color:rgb(77, 75, 75);
+    //     }
+    //     .pull-right{
+    //         .glyphicon glyphicon-user{
+    //             color:rgb(77, 75, 75);
+    //         }
+    //     }
+    //     .glyphicon glyphicon-envelope{
+
+    //         color:rgb(77, 75, 75);
+    //     }
+    //     .glyphicon glyphicon-bell{
+    //         color:rgb(90, 89, 89);
+    //     }
+    // }
+}
+// #navbar{
+//     padding-right: 250px;
+// }
+
+}
+
+#headerbar{
+    background-color:black;
+    height: 30px;
+    margin-top: -40px;
+    
+            .manageSubscriberList{
+
+                // background-color: #000;
+                text-decoration-color: #f9f9f9;
+                color:#5bc0de; 
+                height: 140px;
+               width: 200px;
+                // border-color: #000;
+            
+
+              
+            }
+    }
+// .alert{
+//     padding: 2px;;
+//     background-color:#fdf2ed;
+//     margin-bottom: 4px;
+// border-radius: 0px;
+//     border-left-color:rgb(253, 39, 39);
+//     border-left-width: 10px;
+//     border-style: solid;
+//     // height: 20px;
+
+// }
+
+
+
+// .navbar-inverse{
+//        background-color: white;
+//     border-color: white;
+//     padding-top: 0.5px;
+
+
+
+// .accenturelogo{
+//     width: 220px;
+// }
+
+// .navbar-header{
+//     display: inline-block;
+
+//     .icons{
+//         padding-left: 1050px;
+//         padding-top: 50px;
+//         .glyphicon glyphicon-user{
+//             color:rgb(77, 75, 75);
+//         }
+//         .pull-right{
+//             .glyphicon glyphicon-user{
+//                 color:rgb(77, 75, 75);
+//             }
+//         }
+//         .glyphicon glyphicon-envelope{
+
+//             color:rgb(77, 75, 75);
+//         }
+//         .glyphicon glyphicon-bell{
+//             color:rgb(90, 89, 89);
+//         }
+//     }
+// }
+// #navbar{
+//     padding-right: 250px;
+// }
+
+// }
+
+// #headerbar{
+//     background-color:black;
+//     height: 40px;
+    
+//             .manageSubscriberList{
+
+//                 background-color: #000;
+//                 text-decoration-color: #f9f9f9;
+//                 color:#5bc0de; 
+//                 height: 40px;
+//                width: 200px;
+//                 border-color: #000;
+
+              
+//             }
+//     }
+// .alert{
+//     padding: 20px;
+//     background-color:#ff1d2e;
+//     opacity: 0.5;
+//     color: white;
+//     border-left-color:red;
+//     border-left-width: 30px;
+//     border-style: solid;
+// }
+
+
+.panel-default{
+    margin-bottom: 0px;
+
+    .panel-heading{
+        padding-left: 0.5px;
+        height: 40px;
+        .glyphicon glyphicon-cog{
+padding-right: 1150px;
+        }
+    }
+    #inlinegridgap{
+        padding: 0px;
+        float: right;
+    }
+.row{
+    .col-md-2{
+        padding-left: 10px;
+    }
+    .actionAddNewTask{
+         #actionAddNewTask{
+             #Actions{
+                background-color: #5bc0de;
+                color:white;
+               border-width: 150%;
+               height: 50px;
+               width: 40px;
+               padding: 0px;
+             }
+
+         }
+
+    }
+}
+
+    
+
+
+
+.tableContent{
+.TableHeader{
+    font-size: 11px;
+    font-weight: 600;
+    color: #606060;
+
+}
+.tbody{
+    font-size: 11px;
+    padding: 0px;
+    #editButton{
+        padding: 1px 11px;
+        border-radius: 0px;
+    }
+    .tabletd{
+        border-right-style: solid;
+        border-right-width: thin;
+        border-right-color:#CCC;
+    }
+}
+
+    .P1{
+        background-color:#ff866d;
+        font-weight: 120%;
+      padding: 6px;
+      color: black;
+      text-decoration-style: solid;
+      border-radius: 62%;
+
+    }
+    .P2{
+        background-color:yellow;
+        font-weight: 120%;
+        padding: 6px;
+        color: black;
+        text-decoration-style: solid;
+        border-radius: 62%;
+    }
+    .P3{
+        background-color:lightblue;
+        font-weight: 120%;
+        padding: 6px;
+        color: black;
+        text-decoration-style: solid;
+        border-radius: 62%;
+    }
+}
+
+
+}
+// #Tabledata{
+// .panel-heading{
+//     .actionAddNewTask{
+//         #actionAddNewTask{
+//             display: inline-block;
+
+//             .btn{
+//                 padding: 3px;
+//                 border-radius: 0px;
+
+//             }
+//         }
+//     }
+//     .addnewtaskbutton{
+//         padding-bottom: 3px;
+//         padding-left: 830px;
+//     }
+// }
+// }   buttonEdit
+@media only screen and (min-width: 768px) {
+    #Tabledata{
+        margin-top: 10px;
+   .panel-heading{
+       .actionAddNewTask{
+           #actionAddNewTask{
+               display: inline-block;
+   padding-left: 44px;
+               .btn{
+                   padding: 3px;
+                   border-radius: 0px;
+   
+               }
+           }
+       }
+       .addnewtaskbutton{
+           padding-bottom: 3px;
+           padding-left: 85px;
+       }
+   }
+   }
+   }
+
+   
+.form-control {
+    height: 27px;
+    font-size: 11px;
+}
+
+.IncidentDetails{
+    border: 1px solid #DDD;
+    margin-top: 10px;
+    font-size: 11px;
+    .panel-default{
+        margin-bottom: 0px;
+        border: none;
+        .panel-heading{
+            #buttonEdit{
+                .dropdown{
+                    .fa-ellipsis-h{
+                        border-style: hidden;
+                        color: black;
+                    }
+                    .dropdown-menu{
+                        left: 58px;
+                        top: 16px;
+                        min-width: 26px;
+                        
+                        font-size: 12px;
+                    #dropdown-item{
+                            display: grid;
+                            padding-left: 4px;
+                            cursor: pointer;
+                            color: #000;
+                            padding-bottom: 7px;
+
+                        }
+                    }
+                }
+            }
+
+        }
+        .panel-body{
+            padding: 4px;
+            background-color:white;
+            .IncidentDetailsTable{
+                .IncidentNumber{
+                    padding-left: 0px;
+                    color:#5bc0de;
+                    font-size: 11px;
+                }
+        
+            }
+            .panel-default{
+                .row{
+                    .col-md-12{
+                        .col-md-4{
+                            .IncidentselectDetails{
+
+                                float: left;
+                                .form-control{
+                                    display: -webkit-inline-box;
+                                    font-size: 11px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+
+                                padding-bottom: 10px;
+                                .IncidentselectDetailsIncident{
+                                    font-size: 11px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.searchresult{
+    position: absolute;
+    width: 300px;
+    height: 350px;
+  background-color:black;
+    overflow-y: hidden;
+    z-index: 99;
+  }
+  
+  .searchsuggestions{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    background-color: black;
+    text-decoration-color: white;
+    color:#FFF;
+    cursor: pointer;
+  }
+.serchInput{
+  padding-left: 30px;
+  padding-right: 30px;
+  
+
+  width: 250px;
+
+}
+.managedtable{
+    padding-left: 0px;
+
+}
+
+table.dataTable tbody th, table.dataTable tbody td{
+    padding: 4px;
+}
+@media only screen and (min-width: 768px) {
+    #incidentDetailHeader{
+        background-color: white;
+        // border-bottom-color: 0.5px solid #a59c9c;
+        padding: 0px;
+        padding-bottom: 35px;
+    }
+#buttonEdit{
+    
+    padding: 4px;
+    float:right;
+    padding-right: 0px;
+    .buttonEditbutton{
+        padding: 0px;
+        border-radius: 0px;
+    }
+    
+}
+}
+.btn-info{
+    padding: 2px;
+    border-radius: 0px;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td{ font-size: 11px !important;}
+
+.btn-primary{
+    background-color: black;
+    border-color: black;
+}
+.IncidentNumber{
+    padding-left: 0px;
+  
+}
+th{
+    text-align: center;
+}
+.pager{
+    margin:0px;
+}
+.panel-body{
+    padding: 1px;
+}
+.ellipsis{
+    padding-left: 60px;
+}
+.tdt{
+
+
+    .inlinemanagesubscribers{
+        // display: inline-block;
+        // padding: 0px;
+        // padding-right: 10px;
+        display: inline-block;
+        padding: 0px;
+        padding-right: 10px;
+        margin-top: 2px;
+
+
+
+        button {
+            position: absolute;
+            top: 3px;
+            left: -6px;
+            padding-top: 0px;
+            margin-top: 0px;
+            width: 60px;
+            padding-right: 5px;
+            font-size: 12px;
+            font-weight: 500;
+
+
+            // padding-top: 0px;
+            // margin-top: 0px;
+            // width: 60px;
+            // padding-right: 5px;
+            // font-size: 11px;
+            // font-weight: 500;
+
+            span{
+                padding-right: 5px;
+                padding-top: 3px;
+            }
+        }
+
+        a{
+            color: black;
+        }
+        .dropdown-menu{
+            border-color:#32c5d2;
+            padding: 0px;
+            #dropdown-item{
+                display: grid;
+                background-color: #32c5d2;
+                color: white;
+            }
+        }
+    }
+    
+}
+
+
+#tableoptions { float: right; padding: 0px; width: 125px;
+
+    .inlinemanagesubscribers:nth-child(0) { float: left;}
+    .inlinemanagesubscribers:nth-child(1) { float: left;}
+    .inlinemanagesubscribers:nth-child(2) { float: left;}
+
+    .inlinemanagesubscribers:nth-child(3) { float: left;
+        margin-top: 4px;
+        position: absolute;
+        left: 90px;
+        cursor: pointer;
+    }
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right;
+    position: absolute;
+    left: 22px;
+    right: 137px;
+    z-index: 1;
+    top: -35px;
+}
+
+.table>tbody>tr>td:last-child { border-right: none;}
+
+
+#DataTables_Table_0_wrapper{
+height: 219.333px;
+overflow: auto;
+}
+.ContainerClientLoginForm{
+    .upperHeadingManageSubscribersText{
+        border-bottom: black;
+           border-bottom-style: solid;
+        border-bottom-width: thin;
+        }
+        
+        .sectionHead{
+            display: inline;
+            color: #7a7a7a;
+            font-weight: 600;
+        }
+        .form-inline .form-control{
+            width: 300px;
+        }
+        .help-block{
+            color: red;
+        }
+        .clientID{
+            padding-top: 5%;
+        }
+        .clientNameblock{
+            padding-top: 20px;
+        }
+        .shortNameBlock{
+            padding-top: 20px;
+        }
+        .isClientActiveBlock{
+            padding-top: 20px;
+        }
+        .clientAddressBlockInput{
+            height: 100px;
+            width: 300px;
+        }
+        .remarksBlock{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .remarksBlockInput{
+            height: 100px;
+            width: 300px;
+        }
+        .statusBlock{
+            padding-top: 20px;
+        }
+        .gap{
+            height: 40px;
+        }
+        .FormFeilds{
+            padding-top: 60px;
+            top: 60px;
+        }
+        .form-group{
+            display: table-row;
+        }
+        .unhideallContent{
+            padding-left: 1070px;
+        
+        }
+        .UpdateCancelButton{
+            padding-left: 800px;
+        }
+        .alert {
+            padding: 20px;
+            background-color:#42bf6c;
+            color: white;
+            border-left-color: green;
+            border-left-width: 30px;
+            border-style: solid;
+        }
+        
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+            color: black;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+          }
+          
+          .switch input {display:none;}
+          
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+          
+}
+.sujith{
+    background-color: #2196F3;
+}
+.addnewClientButtons{
+    padding: 20px;
+    float: right;
+}
+.backtomainmenu{
+    // padding: 0px;
+    // float: right;
+    
+    float: right;
+    color: #999;
+    text-decoration: none;
+}
+.detailselectedClient{
+padding-left: 5px;
+}
+.detailedselectedsinglefeild{
+    padding:7px;
+
+    span {
+        text-transform: uppercase;
+    }
+}
+
+// loader start
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .hide {
+    display: none;
+  }
+
+//loader ends  
+
+.fa-list-alt{
+    padding: 5px;
+}
+.fa-user {font-size: 18px; color:#999; padding: 5px; }
+.panel {border-radius: 0px;}
+#DataContainer {padding:15px; border: 1px solid #DDD; margin-top: 10px;}
+.panel-heading {
+    padding: 0px; padding-top: 5px;
+    color: #7a7a7a;
+    background-color: #FFF;
+    .col-md-2 {
+        padding-left: 0px;
+    }
+
+    .managedtable {
+        font-weight: 600;
+    }
+}
+table thead { background-color: #f7f6f6; text-transform: uppercase;}
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    border-right: 1px solid #CCC;
+}
+
+#incidentDetailHeader .col-md-3 {
+    color: #7a7a7a;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 8px;
+    text-align: left;
+    padding-left: 17px;
+}
+
+.form-control {
+    border: 1px solid #DDD;
+    border-radius:0px !important; 
+}
+
+#ActionBtn, .fa-edit, #buttonEditbutton {
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-compress {
+    font-size: 17px; font-weight: normal;
+}
+
+.dropdown {
+    font-size: 15px;
+}
+
+#incidentDetailHeader {
+
+    .col-md-7 {
+        padding-top: 4px;
+    }
+
+
+}
+
+.fa-trash, .fa-edit {
+
+    margin-top: 5px;   
+}
+
+.fa-edit {
+    position: relative;
+    top: 1px;
+}
+
+.modal-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+
+    .fa-exclamation-triangle {
+        color: #FF0000;
+    }
+}
+
+.modal-content {
+
+   .modal-body { text-align: center;}
+
+   .modal-header .close {
+    margin-top: -41px;
+    opacity: 1;
+    }
+    .modal-footer {
+        text-align: center;
+    }
+
+    .enabledBtn {
+        width: 80px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .enabledGrayBtn {
+        width: 80px;
+        background-color: #f7f6f6;
+        border: 1px solid #32c5d2;
+        color: #000000;
+        border-radius: 0px;
+        padding: 2px 12px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 500;
+    }    
+
+}
+
+.ManageClientslist{
+    background-color: #DDD;
+    display: block;
+}
+.searchresult{
+    position: absolute;
+    width: 170px;
+    height: 84px;
+  background-color:#DDD;
+    overflow-y: hidden;
+    z-index: 99;
+  }
+  .addnewstakeholder{
+    padding-bottom: 38px;
+    padding-top: 16px;
+    font-size: 11px;
+}
+.AddNewClientHeader{
+    border-bottom: #000000;
+    border-bottom-style: solid;
+    border-bottom-width:thin;
+    padding: 0px;
+}
+.records{
+    float: right;
+    padding-right: 29px;
+    padding-top: 3px;
+}
+
+.records {
+    float: right;
+    /* padding-right: 29px; */
+    padding-top: 5px;
+}
+#inputrowga{
+    padding: 5px;
+    border-bottom:  0.4px solid #e3dddd;
+}
+.red-border-class{
+    border-color: red;
+}
+.fa-check{
+    color: white !important;
+    padding:2px;
+}
+#status{
+    padding-left: 0px;background-color: green;
+    border-radius: 12px;
+}
+.Clientinputlable{
+    font-weight: 400;
+    font-size: 11px;
+}
+#Bunitdisplay{
+    text-align: left;
+    padding: 0px;
+}
+#Managertabletitle{
+    text-align: left;
+}
+#addnewdiv{
+    padding: 0px;
+    padding-left: 5px;
+}
+.addnewbuttons{
+    padding-left: 1084px;
+    }
+    .red-border-class{
+        border-color: red;
+    }
+    .help-block{
+        color: red !important;
+        margin-right: 100px;
+        margin-left: -10px;
+    }
+    

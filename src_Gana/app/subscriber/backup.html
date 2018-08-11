@@ -1,0 +1,564 @@
+<div id="loader" class="hide"></div>
+
+<div class="ContainerClient" [hidden]="enableBusinessUnitNew">
+<div class="Tettt" >
+      <div  class="container-fluid" class="pager" *ngIf="HideContent">
+        <div class="panel panel-default" [style.height]="heightTable + '%'"  id="Tabledata" [hidden]="zoomIncidentDetail" >
+            <div class="panel-heading" >
+              <div class="col-md-2">
+                <i class="fa fa-user"></i><span class="managedtable">MANAGE CLIENTS LIST</span>
+       
+              </div>  
+              <div class="col-md-9">
+              </div>
+              <div class="col-md-2" id="tableoptions">
+                <span class="tdt">
+                </span>
+                <span class="tdt">
+                    <div>
+                        <div class="inlinemanagesubscribers">
+                            <button class="btn btn-info"(click)="MakeAddClientEnable()">&nbsp;<span class="glyphicon glyphicon-plus"></span>ADD</button>
+                            </div>
+                          
+                        <div class="inlinemanagesubscribers">
+                            <a class="fa fa-ellipsis-h
+                            dropdown-toggle" type="button" 
+                            id="dropdownMenuButton"
+                             data-toggle="dropdown"
+                             aria-haspopup="true"
+                             aria-expanded="false">
+              
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="filterTable('clientName')" >Client Name</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('clientId')">Client Id</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('shortName')">ShortName</a>
+                          </div>
+                        </div>
+          <div class="inlinemanagesubscribers">
+              <i class="fa fa-expand" (click)="zoomTableDetails()" *ngIf="!zoomTableDetail"></i>
+              <i class="fa fa-compress" (click)="zoomOutTableDetails()" *ngIf="zoomTableDetail" ></i>
+              
+      
+          </div>
+                        </div>
+                    
+                </span>
+                  
+              
+       
+            </div>
+              </div>
+           <div>
+              
+           </div>
+         <div class="tableContent" >
+            <div class="panel-body" >
+               <table ng-style="{ 'height': yourModelToProvideValue }" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-border table-hover table-fixed-header">
+                    <thead>
+                      <tr class="TableHeader">
+                        <th class="TableHeaderth">SUBSCRIBERS ID</th>
+                        <th class="TableHeaderth">SUBSCRIBERS NAME</th>
+                        <th class="TableHeaderth">SUBSCRIBERS DESC</th>
+                         <th class="TableHeaderth">BUSINESS UNIT DETAILS</th>
+                         <th class="TableHeaderth">Remarks</th>
+                         <th class="TableHeaderth">authAttribute</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                      <tr *ngFor="let person of persons;let i = index"
+                      [ngStyle]="{'background-color':person.businessGroupId===testvalue ? 'rgb(166, 223, 241)' : '' }"
+                      (click)="toggle(person)">
+                    <td class="tabletd">{{person.subscriberId}}</td>
+                    <td class="tabletd">{{person.subscriberName}}</td>
+                    <td class="tabletd"><span class={{person.Priority}}>{{person.subsDesc}}</span></td>  
+                    <td class="tabletd">{{person.businessUnitDetails.name}}</td>
+                    <td class="tabletd">{{person.remarks}}</td>
+                    <td class="tabletd">{{person.authAttribute}}</td>
+                      </tr> 
+                    </tbody>
+                    </table>
+                  </div>
+                  
+                 
+        
+         </div>
+         
+      </div>
+      <div class="IncidentDetails" [hidden]="zoomTableDetail"  >
+          <div class="panel panel-default" ><!--*ngIf="DetailSelectedshow"-->
+           
+            <div class="panel-heading" id="incidentDetailHeader"><span class="col-md-2" id="" 
+              clickOutside (clickOutside)="closeDropDown()"
+              (click)="ManageClientsDropdownToggle()">
+              <i class="fa fa-list-alt"></i> Client Details <i class="fa fa-caret-down"></i>
+         
+              <ul class="hide" id="ManageClients">
+                <div class="searchresult">
+                <li class="ManageClientslist">Business Group info</li>
+                <li class="ManageClientslist">Business Units</li>
+                <li class="ManageClientslist">SubScriber info</li>
+                <li class="ManageClientslist">Manage groups</li>
+              </div>
+              </ul>
+             </span>
+              <div class="col-md-3 pull-right" id="">
+                <div id="buttonEdit">
+                    <div class="dropdown">
+                        <!-- <button *ngIf="IncidentEditable" class="btn btn-info"id="buttonEditbutton" (click)="edit()">Edit</button>&nbsp;&nbsp; -->
+                        <button id="ActionBtn" class="fa fa-edit" *ngIf="IncidentEditable" id="" (click)="edit()"></button>
+                        <button id="ActionBtn" class="fa fa-trash" data-toggle="modal" data-target="#exampleModalCenter"></button>
+                        <button id="ActionBtn" class="fa fa-save" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Updateclient()"></button>
+                        <button id="ActionBtn" class="fa fa-remove" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Cancel()"></button>
+                        <a class="fa fa-ellipsis-h dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="edit()" >edit</a>
+                            <a class="" id="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">
+                              delete
+                            </a>
+                            
+                            <!-- <a class="" id="dropdown-item" (click)="deleteClient()">delete</a> -->
+                          </div>
+        
+        
+      
+                        &nbsp;&nbsp; 
+                
+                        <i class="fa fa-expand" (click)="zoomProductIncidentDetails()"*ngIf="!zoomIncidentDetail"></i>
+                
+                        <i class="fa fa-compress" (click)="zoomOutIncidentDetails()" *ngIf="zoomIncidentDetail"></i>
+      
+                        
+      
+                      </div>
+      
+      
+      
+      
+            </div></div></div> 
+            <div class="panel-body" >
+              <!-- <div style="padding-left: 1000px;"><button class="btn btn-info"id="buttonEdit">Edit</button></div> -->
+              <!--  [style.height.px]="height" [style.height.px]="height"  -->
+              <div class="panel panel-default"  [style.height]="height + 'px'" >
+        
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                          <div class="col-md-3">
+                              <span style="float: left;"><label>SUBSCRIBERS  ID</label> </span>
+
+                          </div>
+                          <div class="col-md-1">
+                              <span style="padding-left: 0px;">:</span>
+                            </div>
+      
+                          <div class="col-md-2">
+                              <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.subscriberId}}</span>
+                              </div>
+      
+                          <div class="col-md-6">
+                              <span *ngIf="!IncidentEditable">
+                           
+                                  <input type="text" 
+                                  class="form-control" 
+                                  style="width: 56%"
+                                  value={{DetailSelected.subscriberId}}
+                                  readonly="true"
+                                  ></span>                             
+                                 </div>
+      
+      
+                        </div><!-- col-md-6-->
+      
+      
+                        <div class="col-md-6">
+                            <div class="col-md-3">
+                                <span style="float: left;"><label>SUBSCRIBERS Name</label></span>
+                      </div>
+                            <div class="col-md-1">
+                                <span style="padding-left: 0px;">:</span>
+                              </div>
+        
+                            <div class="col-md-2">
+                                <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.subscriberName}}</span>
+                            </div>
+        
+                            <div class="col-md-6">
+                                <span *ngIf="!IncidentEditable">
+                                    <input type="text" 
+                                    class="form-control" 
+                                    style="width:56%;"
+                                     value={{DetailSelected.subscriberName}}
+                                     [(ngModel)]="businessGroupNameupdate">
+      
+                              </span>
+                           
+                              </div>
+                            </div><!-- col-md-6-->
+                          
+      
+                      </div> <!--col-md-12-->
+
+                      <div class="col-md-12">
+                          <div class="col-md-6">
+                            <div class="col-md-3">
+                                <span style="float: left;"><label>SUBSCRIBERS DESC</label></span>
+  
+                            </div>
+                            <div class="col-md-1">
+                                <span style="padding-left: 0px;">:</span>
+                              </div>
+        
+                            <div class="col-md-2">
+                                <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.subsDesc}}</span>
+                                </div>
+        
+                            <div class="col-md-6">
+                               
+                                <span *ngIf="!IncidentEditable">
+                                    <input type="date" 
+                                    class="form-control" 
+                                    style="width:57%;" 
+                                    value={{DetailSelected.subsDesc}}
+                                    [(ngModel)]="businessGroupDescupdate">
+  
+                                 </span>
+                                   </div>
+        
+        
+                          </div><!-- col-md-6-->
+        
+        
+                          <div class="col-md-6">
+                              <div class="col-md-3">
+                                  <span style="float: left;"><label>Remarks</label></span>
+                        </div>
+                              <div class="col-md-1">
+                                  <span style="padding-left: 0px;">:</span>
+                                </div>
+          
+                              <div class="col-md-2">
+                                  <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.remarks}}</span>
+                                 
+                              </div>
+          
+                              <div class="col-md-6">
+                                  <span *ngIf="!IncidentEditable">
+                                      <input type="text"
+                                         class="form-control"
+                                         style="width:57%;"
+                                         value={{DetailSelected.remarks}}
+                                         
+                                         [(ngModel)]="businessremarksupdate"
+                                         >
+         
+                                 </span>
+                                  
+                             
+                                </div>
+                              </div><!-- col-md-6-->
+                            
+        
+                        </div> <!--col-md-12-->
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                              <div class="col-md-3">
+                                  <span style="float: left;"><label>Status</label></span>
+                              </div>
+                              <div class="col-md-1">
+                                  <span style="padding-left: 0px;">:</span>
+                                </div>
+          
+                              <div class="col-md-2">
+                                  <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.isActive}}</span>
+                                  </div>
+          
+                              <div class="col-md-6">
+                                  <span *ngIf="!IncidentEditable">
+                                      <input type="text" 
+                                      class="form-control" 
+                                      style="width:57%;" 
+                                      value={{DetailSelected.isActive}}
+                                      [(ngModel)]="businessStatusupdate">
+                                   </span>
+                                     </div>
+          
+          
+                            </div><!-- col-md-6-->
+          
+          
+                            <div class="col-md-6">
+                                <div class="col-md-3">
+                                    <span style="float: left;"><label>BUSINESS UNIT</label></span>
+                          </div>
+                                <div class="col-md-1">
+                                    <span style="padding-left: 0px;">:</span>
+                                  </div>
+            
+                                <div class="col-md-2">
+                                    <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.clientDetails.clientName}}</span>
+                                   
+                                </div>
+            
+                                <div class="col-md-6">
+                                    <span *ngIf="!IncidentEditable" style="float: left;">
+                                        <select [(ngModel)]="businessClientUpdate">
+                                            <option *ngFor="let businessGroup of businessGroupInfo" [ngValue]=""> {{businessGroup.name}} </option>
+                                          </select> 
+                                    </span>
+       
+                               
+                                  </div>
+                                </div><!-- col-md-6-->
+                              
+          
+                          </div> <!--col-md-12-->
+                      
+                 
+                  </div>
+                </div>   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+             <!-- <table class="table table-border">-->
+          <!--  IncidentDetailsTable-->
+         <!-- <tr>
+            <th class="IncidentNumber">
+              Incident Number<span></span>
+            </th>
+            <td>:</td>
+            <td>
+                <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.IncidetNo}}></span>
+                <span *ngIf="IncidentEditable">{{DetailSelected.IncidetNo}}</span>
+            </td>
+          </tr>
+          <tr>
+              <th>
+                Client Name
+              </th>
+              <td>:</td>
+              <td>
+                  <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.Client}}></span>
+                  <span *ngIf="IncidentEditable">{{DetailSelected.Client}}</span>
+              </td>
+            </tr>
+            <tr>
+                <th>
+                  Incident Number<span></span>
+                </th>
+                <td>:</td>
+                <td>
+                    <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;"  value={{DetailSelected.IncidetNo}}></span>
+                    <span *ngIf="IncidentEditable">{{DetailSelected.IncidetNo}}</span>
+                </td>
+              </tr>
+              <tr>
+                  <th>-->
+                      <!-- <span><input type="text" [readonly]="IncidentEditable" value={{DetailSelected.IncidetNo}}></span> -->
+                    <!--Sla Status<span></span>
+                  </th>
+                  <td>:</td>
+                  <td>
+                      <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.SLAStatus}}></span>
+                      <span *ngIf="IncidentEditable">{{DetailSelected.SLAStatus}}</span>
+                  </td>
+                </tr>
+                <tr>
+                    <th>
+                     Priority<span></span>
+                    </th>
+                    <td>:</td>
+                    <td>
+                        <span *ngIf="!IncidentEditable"><input type="text" class="form-control"  style="width:57%;" value={{DetailSelected.Priority}}></span>
+                        <span *ngIf="IncidentEditable">{{DetailSelected.Priority}}</span>
+                      
+                    </td>
+                  </tr>
+        
+                <tr>
+                    <th>
+                      Remarks<span></span>
+                    </th>
+                    <td>:</td>
+                    <td>
+                      <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.remarks}}></span>
+                   <span *ngIf="IncidentEditable">{{DetailSelected.remarks}}</span>
+                    </td>
+                  </tr>
+                  <tr>
+                      <th>-->
+                          <!-- <span><input type="text" [readonly]="IncidentEditable" value={{DetailSelected.IncidetNo}}></span> -->
+       <!--                Summary<span></span>
+                      </th>
+      
+                      <td>:</td>
+                      <td>
+                          <span *ngIf="!IncidentEditable"><input type="text" class="form-control"style="width:57%;" value={{DetailSelected.Summary}}></span>
+                          <span *ngIf="IncidentEditable">{{DetailSelected.Summary}}</span>
+                      </td>
+                    </tr>
+        
+              </table>-->
+        </div>
+        </div>
+      </div>
+<!--       
+      </div>
+      
+      </div> -->
+
+      <router-outlet></router-outlet>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Update Incident</h4>
+              </div>
+              <div class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn-secondary">Cancel</a>
+                <a href="#" class="btn btn-info">Update</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      <!-- test delete alert -->
+      
+      <!-- Modal -->
+      <div class="modal fade" 
+                id="exampleModalCenter" 
+                tabindex="-1" 
+                role="dialog" 
+                aria-labelledby="exampleModalCenterTitle" 
+                aria-hidden="true"
+                >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-exclamation-triangle"></i>  Warning !! </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="border:white">
+              Are you sure that you want to permanently delete the record ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn enabledGrayBtn" data-dismiss="modal" #deleteModal>Cancel</button>
+              <button type="button" class="btn btn-info enabledBtn" (click)="deleteClient()">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+
+</div>
+<div id="DataContainer" class="ContainerClientLoginForm" *ngIf="!enableBusinessUnitNew">
+    <div id="DataContainer" class="ContainerClientLoginForm" [hidden]="!enableBusinessUnitNew">
+
+        <div class="Form">
+        <div class="FormHeading">
+          <span class="sectionHead">Add New Client</span>
+            <span class="backtomainmenu" (click)="disableclientaddform()"><span class="fa fa-angle-left"></span><span>Back</span></span>
+     
+      </div>
+        <div>
+          <div class="panel">
+                <form class="form-inline" [formGroup]="AddNewBusinessUnit" (ngSubmit)="AddBusinessGroup(AddNewBusinessUnit.getRawValue())">
+                  <div class="row" id="FormFeilds">
+                  <br><br><br>
+                    <div class="col-md-6">
+                          <div class="clientNameblock">
+                            <label for="clientName">Business Group Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="clientName" class="form-control" id="clientName" placeholder="Enter clientName" name="clientName" formControlName="name">
+                            <span class="help-block" *ngIf="(AddNewBusinessUnit.get('name').touched ||
+                            AddNewBusinessUnit.get('name').dirty) &&
+                            AddNewBusinessUnit.get('name').errors">
+                          <span *ngIf="AddNewBusinessUnit.get('name').errors.required">
+                            BusinessGroup Name is  required.
+                          </span>
+        </span>
+                          </div>
+        
+                          <div class="shortNameBlock">
+                              <label for="shortName">Business group Short Name:</label>
+                              <input type="text" class="form-control" id="shortName" placeholder="Enter Short Name" name="ShortName" formControlName="shortName" >
+                              <span class="help-block" *ngIf="(AddNewBusinessUnit.get('shortName').touched ||
+                              AddNewBusinessUnit.get('shortName').dirty) &&
+                              AddNewBusinessUnit.get('shortName').errors">
+                            <span *ngIf="AddNewBusinessUnit.get('shortName').errors.required">
+                                short Name is  required.
+                            </span>
+          </span>
+        
+                            </div>
+                            <div class="isClientActiveBlock">
+                            
+                                <label for="shortName">Business group Short Name:</label>
+                                <input type="text" class="form-control" id="shortName" placeholder="Enter Short Name" name="ShortName" formControlName="shortName" >
+                                <span class="help-block" *ngIf="(AddNewBusinessUnit.get('shortName').touched ||
+                                AddNewBusinessUnit.get('shortName').dirty) &&
+                                AddNewBusinessUnit.get('shortName').errors">
+                              <span *ngIf="AddNewBusinessUnit.get('shortName').errors.required">
+                                  short Name is  required.
+                              </span>
+            </span>           
+                            
+                            </div>
+        
+                    </div>
+                    <div class="col-md-6">
+        
+                      <div class="remarksBlock">
+                        <label for="remarks">Remarks:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="remarks" placeholder="Enter Remarks" name="remarks" formControlName="remarks" >
+                       </div>
+                      <div formGroupName="clientInfo"> 
+                        <label>select Client name</label>
+                          <select formControlName="clientId">
+                              <option *ngFor="let client of clientDetails" [ngValue]=""> {{client.clientName}} </option>
+                            </select>               
+                      </div>
+    
+        
+        
+        
+                    </div>
+        
+                    </div>
+    
+                   <div class="addnewClientButtons">
+                    <button type="submit" class="btn btn-info">submit</button> &nbsp;<button class="btn btn-info" (click)="disableclientaddform()">cancel</button>
+    
+                   </div>
+        
+                  </form>
+                </div>
+        
+              </div>
+              </div>
+        
+    </div>

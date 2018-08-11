@@ -1,0 +1,48 @@
+.outerClass{
+    height: 600px;
+    width: 900px;
+
+}
+.modal-dialog{
+    width: 85%;
+}
+#exampleModal{
+  
+
+}
+.modal-content{
+    width: 100%;
+    float: right;
+    position: relative;
+}
+.alert {
+    padding: 20px;
+    background-color:green;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+#testbutton{
+
+}
+.Form{
+    padding: 0px;
+}
+.btn{
+    padding: 0px;
+    border-radius: 0px;
+    
+}

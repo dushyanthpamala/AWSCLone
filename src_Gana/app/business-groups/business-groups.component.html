@@ -1,0 +1,768 @@
+<div id="loader" class="hide"></div>
+
+<div class="ContainerClient" [hidden]="enableClientNew">
+<div class="Tettt" >
+      <div  class="container-fluid" class="pager" *ngIf="HideContent">
+        <div class="panel panel-default" [style.height]="heightTable + '%'"  id="Tabledata" [hidden]="zoomIncidentDetail" >
+            <div class="panel-heading" >
+              <div class="col-md-3">
+                <i class="fa fa-user"></i><span class="managedtable">MANAGE BUSINESS GROUP</span>
+       
+              </div>  
+              <div class="col-md-6">
+                  <span class="records">
+                      <!-- Total {{clientCounter}} Records -->
+                   </span>
+
+              </div>
+              <div class="col-md-2" id="tableoptions">
+                <span class="tdt">
+                </span>
+                <span class="tdt">
+                    <div>
+                        <div class="inlinemanagesubscribers">
+                            <button class="btn btn-info"(click)="MakeAddClientEnable()">&nbsp;<span class="glyphicon glyphicon-plus"></span>ADD</button>
+                            </div>
+                          
+                        <div class="inlinemanagesubscribers">
+                            <a class="fa fa-ellipsis-h
+                            dropdown-toggle" type="button" 
+                            id="dropdownMenuButton"
+                             data-toggle="dropdown"
+                             aria-haspopup="true"
+                             aria-expanded="false">
+              
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="filterTable('clientName')" >Client Name</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('clientId')">Client Id</a>
+                            <a class="" id="dropdown-item" (click)="filterTable('shortName')">ShortName</a>
+                          </div>
+                        </div>
+          <div class="inlinemanagesubscribers">
+              <i class="fa fa-expand" (click)="zoomTableDetails()" *ngIf="!zoomTableDetail"></i>
+              <i class="fa fa-compress" (click)="zoomOutTableDetails()" *ngIf="zoomTableDetail" ></i>
+              
+      
+          </div>
+                        </div>
+                    
+                </span>
+                  
+              
+       
+            </div>
+              </div>
+           <div>
+              
+           </div>
+         <div class="tableContent" >
+            <div class="panel-body" >
+               <table ng-style="{ 'height': yourModelToProvideValue }" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-border table-hover cell-border">
+                    <thead>
+                      <tr class="TableHeader">
+                        <th class="TableHeaderth">BusinessGroupId</th>
+                        <th class="TableHeaderth">Name</th>
+                        <th class="TableHeaderth">ClientName</th>
+                        <th class="TableHeaderth">BusinessGroup</th>
+                         <th class="TableHeaderth">Remarks</th>
+                         <th class="TableHeaderth">ShortName</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                      <tr *ngFor="let person of persons;let i = index"
+                      [ngStyle]="{'color':person.businessGroupId===testvalue ? 'white' : '','background-color':person.businessGroupId===testvalue ? '#364150' : '' }"
+                      (click)="toggle(person)">
+                    <td class="tabletd">{{person.businessGroupId}}</td>
+                    <td class="tabletd">{{person.name}}</td>
+                    <td class="tabletd"><span class={{person.Priority}}>{{person.clientDetails.clientName}}</span></td>  
+                    <td class="tabletd">{{person.businessGroupDesc}}</td>
+                    <td class="tabletd">{{person.remarks}}</td>
+                    <td class="tabletd">{{person.shortName}}</td>
+                      </tr> 
+                    </tbody>
+                    </table>
+                    <div class="" id="recordsdivfoot">
+                
+                        <span class="recordsfoot">
+                           Total {{clientCounter}} Records
+                        </span>
+                        </div>
+  
+                    
+                  </div>
+                  
+                 
+        
+         </div>
+         
+      </div>
+      <div class="IncidentDetails" [hidden]="zoomTableDetail"  >
+          <div class="panel panel-default" ><!--*ngIf="DetailSelectedshow"-->
+           
+            <div class="panel-heading" id="incidentDetailHeader"><span class="col-md-3" id="" 
+              clickOutside (clickOutside)="closeDropDown()"
+              (click)="ManageClientsDropdownToggle()">
+              <i class="fa fa-list-alt"></i><span>BUSINESSGROUP DETAILS</span> <i class="fa fa-angle-down"></i> 
+              <ul class="hide" id="ManageClients" style="padding: 0px;
+              padding: 0px;
+        margin:0px;
+        margin-top: 10px;
+        margin-left: -17px;">
+                <div class="searchresult" id='searchresultid'>
+                <li class="ManageClientslist" id="ManageClientslistid" (click)="showERelativeStakeholder()">Business Group info</li>
+                <li class="ManageClientslist" id="ManageClientslistid">Business Units</li>
+                <li class="ManageClientslist" id="ManageClientslistid">SubScriber info</li>
+                <li class="ManageClientslist" id="ManageClientslistid">Manage groups</li>
+              </div>
+              </ul>
+             </span>
+              <div class="col-md-3 pull-right" id="">
+                <div id="buttonEdit">
+                    <div class="dropdown">
+                        <!-- <button *ngIf="IncidentEditable" class="btn btn-info"id="buttonEditbutton" (click)="edit()">Edit</button>&nbsp;&nbsp; -->
+                        <button id="ActionBtn" class="fa fa-edit" *ngIf="IncidentEditable" id="" (click)="edit()"></button>
+                        <button id="ActionBtn" class="fa fa-trash" data-toggle="modal" data-target="#exampleModalCenter"></button>
+                        <button id="ActionBtn" class="fa fa-save" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Updateclient()"></button>
+                        <button id="ActionBtn" class="fa fa-remove" *ngIf="!IncidentEditable" id="buttonEditbutton" (click)="Cancel()"></button>
+                        <a class="fa fa-ellipsis-h dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="" id="dropdown-item" (click)="edit()" >edit</a>
+                            <a class="" id="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">
+                              delete
+                            </a>
+                            
+                            <!-- <a class="" id="dropdown-item" (click)="deleteClient()">delete</a> -->
+                          </div>
+        
+        
+      
+                        &nbsp;&nbsp; 
+                
+                        <i class="fa fa-expand" (click)="zoomProductIncidentDetails()"*ngIf="!zoomIncidentDetail"></i>
+                
+                        <i class="fa fa-compress" (click)="zoomOutIncidentDetails()" *ngIf="zoomIncidentDetail"></i>
+      
+                        
+      
+                      </div>
+      
+      
+      
+      
+            </div></div></div> 
+            <div class="panel-body" >
+              <!-- <div style="padding-left: 1000px;"><button class="btn btn-info"id="buttonEdit">Edit</button></div> -->
+              <!--  [style.height.px]="height" [style.height.px]="height"  -->
+              <div class="panel panel-default"  [style.height]="height + 'px'" >
+        
+                <div class="row">
+                    <div class="col-md-12 " id="inputrowga">
+                        <div class="col-md-6">
+                            <div class="col-md-4">
+                                <span style="float: left;"><label class="Clientinputlable">BUSINESS GROUP ID</label> </span>
+                            </div>
+                            <div class="col-md-1">
+                                <span style="padding-left: 0px;">:</span>
+                              </div>
+        
+                            <div class="col-md-2" id="clientdisplay">
+                                <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.businessGroupId}}</span>
+                              </div>
+        
+                            <div class="col-md-6">
+                                <span *ngIf="!IncidentEditable">
+                        
+                                    <span *ngIf="!IncidentEditable">
+                             
+                                        <input type="text" 
+                                        class="form-control" 
+                                        style="width: 56%"
+                                        value={{DetailSelected.businessGroupId}}
+                                        readonly="true"
+                                        ></span>
+                                        </span>
+                              </div>
+                          
+                          </div>
+        
+                          <div class="col-md-6" id="clientdetailscolalign">
+                              <div class="col-md-3">
+                                  <span style="float: left;"><label class="Clientinputlable">BUSINESS GROUP NAME</label></span> 
+                                </div>
+                              <div class="col-md-1">
+                                  <span style="padding-left: 0px;">:</span>
+                                </div>
+                              <div class="col-md-2" id="clientdisplay">
+                                  <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.name}}</span>
+                              </div>
+                              <div class="col-md-6">
+                                  <span *ngIf="!IncidentEditable">
+                                      <input type="text" 
+                                      class="form-control" 
+                                      style="width:56%;"
+                                       [(ngModel)]="businessGroupNameupdate"
+                                       [ngClass]="{'red-border-class': 
+                                       BusinessGroupNameValidation()
+                                      }">
+  
+                                       <span *ngIf="BusinessGroupNameValidation()" class="help-block">
+                                          <span>{{BusinessGroupErrorMessage}}</span>
+                                       </span>
+        
+                                </span>
+        
+                                </div>
+                              </div><!-- col-md-6-->
+
+                      </div> <!-- col-md-12-->
+                         <div class="col-md-12 " id="inputrowga">
+                          <div class="col-md-6">
+                            <div class="col-md-4">
+                                <span style="float: left;"><label class="Clientinputlable">BUSINESS GROUP DESC</label></span>
+                              </div>
+                            <div class="col-md-1">
+                                <span style="padding-left: 0px;">:</span>
+                              </div>
+        
+                            <div class="col-md-2" id="clientdisplay">
+                                <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.businessGroupDesc}}</span>
+                              </div>
+        
+                            <div class="col-md-6">
+                                <span *ngIf="!IncidentEditable">
+                                    <input type="text" 
+                                    class="form-control" 
+                                    style="width:57%;" 
+                                    [(ngModel)]="businessGroupDescupdate"
+                                    [ngClass]="{'red-border-class': 
+                                       BusinessGroupDescValidation()
+                                      }">
+
+                                     <span *ngIf="BusinessGroupDescValidation()" class="help-block">
+                                       <span>
+                                         {{businessGroupDescErrorMessage}}
+                                       </span>
+                                     </span>
+                                </span>
+                              </div>
+        
+        
+                          </div><!-- col-md-6-->
+                          <div class="col-md-6" id="clientdetailscolalign">
+                              <div class="col-md-3">
+                                  <span style="float: left;"><label class="Clientinputlable">REMARKS</label></span>
+                                </div>
+                              <div class="col-md-1">
+                                  <span style="padding-left: 0px;">:</span>
+                                </div>
+          
+                              <div class="col-md-2" id="clientdisplay">
+                                  <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.remarks}}</span>
+                              </div>
+          
+                              <div class="col-md-6">
+                                  <span *ngIf="!IncidentEditable">
+                                      <input type="text"
+                                      class="form-control"
+                                      style="width:57%;"
+                                      
+                                      [(ngModel)]="businessremarksupdate"
+                                      [ngClass]="{'red-border-class': 
+                                      remarksupdateValidation()
+                                      }"
+                                      >
+                                      
+      
+                                      <span *ngIf="remarksupdateValidation()" class="help-block">
+                                          <span>
+                                            {{BusinessRemarkErrorMessage}}
+                                          </span>
+                                        </span>
+         
+                                    </span>
+                                </div>
+          
+          
+                            </div><!-- col-md-6-->
+      
+        
+        
+                            
+        
+                        </div> <!--col-md-12-->
+                          <!--for addresss and remarks  -->
+                          <div class="col-md-12 " id="inputrowga">
+          
+          
+                              <div class="col-md-6">
+                                  <div class="col-md-4">
+                                      <span style="float: left;"><label class="Clientinputlable">STATUS</label></span>
+                                    </div>
+                                  <div class="col-md-1">
+                                      <span style="padding-left: 0px;">:</span>
+                                    </div>
+              
+                                  <div class="col-md-2" id="clientdisplay">
+                                      <span *ngIf="IncidentEditable">
+                                          <!-- id="status" -->
+                                          <span *ngIf="(businessStatusupdate==true)">yes</span>
+                                          <span id="status">
+                                              <span *ngIf="(businessStatusupdate==true)">
+                                                  <!-- <span>yes</span> -->
+                                                  <i class="fa fa-check"></i></span>
+                     
+                                          </span>
+                                        </span>
+                                        <span *ngIf="IncidentEditable">
+                                            <span *ngIf="(businessStatusupdate==false)">No</span>
+                                            <span class="statusCheck">
+                                                <span *ngIf="(businessStatusupdate==false)" >
+                                                   
+                                                    <i class="fa fa-times"></i>
+                                                  </span>
+                       
+                                            </span>
+                                        </span>
+      
+  
+                                  </div>
+                                  
+              
+                                  <div class="col-md-6">
+                                      <span *ngIf="!IncidentEditable">
+                                          <span *ngIf="!IncidentEditable"  style="float: left">
+                                              <select [(ngModel)]="businessStatusupdate" value="businessStatusupdate">
+                                                  <option>active</option>
+                                                  <option>inactive</option>
+                                                </select> 
+                                          </span>
+                                       </span>
+        
+                                    </div>
+                                  </div><!-- col-md-6-->
+                                
+            
+                            </div> <!--col-md-12-->
+                            <div class="col-md-12 " id="inputrowga">
+                                <div class="col-md-6">
+                                  <div class="col-md-4">
+                                      <span style="float: left;"><label class="Clientinputlable">CLIENT NAME</label></span>
+                                    </div>
+                                  <div class="col-md-1">
+                                      <span style="padding-left: 0px;">:</span>
+                                    </div>
+              
+                                  <div class="col-md-2" id="clientdisplay">
+                                      <span *ngIf="IncidentEditable" style="padding-left: 0px;">{{DetailSelected.clientDetails.clientName}}</span>
+                                     </div>
+              
+                                  <div class="col-md-6">
+                                     
+                                          <span *ngIf="!IncidentEditable" style="float: left;">
+                                              <select [(ngModel)]="businessClientUpdate">
+                                                  <option *ngFor="let client of clientDetails" [ngValue]=""> {{client.clientName}} </option>
+                                                </select> 
+                                          </span>
+                                       
+                                    </div>
+              
+              
+                                </div><!-- col-md-6-->
+              
+                              </div> <!--col-md-12-->
+  
+  
+                  
+            
+                      
+                 
+                  </div>
+                </div>   
+      
+      
+      
+      
+      
+                
+                
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+             <!-- <table class="table table-border">-->
+          <!--  IncidentDetailsTable-->
+         <!-- <tr>
+            <th class="IncidentNumber">
+              Incident Number<span></span>
+            </th>
+            <td>:</td>
+            <td>
+                <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.IncidetNo}}></span>
+                <span *ngIf="IncidentEditable">{{DetailSelected.IncidetNo}}</span>
+            </td>
+          </tr>
+          <tr>
+              <th>
+                Client Name
+              </th>
+              <td>:</td>
+              <td>
+                  <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.Client}}></span>
+                  <span *ngIf="IncidentEditable">{{DetailSelected.Client}}</span>
+              </td>
+            </tr>
+            <tr>
+                <th>
+                  Incident Number<span></span>
+                </th>
+                <td>:</td>
+                <td>
+                    <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;"  value={{DetailSelected.IncidetNo}}></span>
+                    <span *ngIf="IncidentEditable">{{DetailSelected.IncidetNo}}</span>
+                </td>
+              </tr>
+              <tr>
+                  <th>-->
+                      <!-- <span><input type="text" [readonly]="IncidentEditable" value={{DetailSelected.IncidetNo}}></span> -->
+                    <!--Sla Status<span></span>
+                  </th>
+                  <td>:</td>
+                  <td>
+                      <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.SLAStatus}}></span>
+                      <span *ngIf="IncidentEditable">{{DetailSelected.SLAStatus}}</span>
+                  </td>
+                </tr>
+                <tr>
+                    <th>
+                     Priority<span></span>
+                    </th>
+                    <td>:</td>
+                    <td>
+                        <span *ngIf="!IncidentEditable"><input type="text" class="form-control"  style="width:57%;" value={{DetailSelected.Priority}}></span>
+                        <span *ngIf="IncidentEditable">{{DetailSelected.Priority}}</span>
+                      
+                    </td>
+                  </tr>
+        
+                <tr>
+                    <th>
+                      Remarks<span></span>
+                    </th>
+                    <td>:</td>
+                    <td>
+                      <span *ngIf="!IncidentEditable"><input type="text" class="form-control" style="width:57%;" value={{DetailSelected.remarks}}></span>
+                   <span *ngIf="IncidentEditable">{{DetailSelected.remarks}}</span>
+                    </td>
+                  </tr>
+                  <tr>
+                      <th>-->
+                          <!-- <span><input type="text" [readonly]="IncidentEditable" value={{DetailSelected.IncidetNo}}></span> -->
+       <!--                Summary<span></span>
+                      </th>
+      
+                      <td>:</td>
+                      <td>
+                          <span *ngIf="!IncidentEditable"><input type="text" class="form-control"style="width:57%;" value={{DetailSelected.Summary}}></span>
+                          <span *ngIf="IncidentEditable">{{DetailSelected.Summary}}</span>
+                      </td>
+                    </tr>
+        
+              </table>-->
+        </div>
+        </div>
+      </div>
+      
+      </div>
+      
+      </div>
+
+      <router-outlet></router-outlet>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Update Incident</h4>
+              </div>
+              <div class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn-secondary">Cancel</a>
+                <a href="#" class="btn btn-info">Update</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      <!-- test delete alert -->
+      
+      <!-- Modal -->
+      <div class="modal fade" 
+                id="exampleModalCenter" 
+                tabindex="-1" 
+                role="dialog" 
+                aria-labelledby="exampleModalCenterTitle" 
+                aria-hidden="true"
+                >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-exclamation-triangle"></i>  Warning !! </h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="border:white">
+              Are you sure that you want to permanently delete the record ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn enabledGrayBtn" data-dismiss="modal" #deleteModal>Cancel</button>
+              <button type="button" class="btn btn-info enabledBtn" (click)="deleteBusinessGroup()">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+<div id="DataContainer" class="ContainerClientLoginForm" [hidden]="!enableClientNew">
+    <div id="DataContainer" class="ContainerClientLoginForm" [hidden]="!enableClientNew">
+
+        <div class="panel panel-default addnewformpn" id="Form">
+              
+        <!-- <div class="AddNewClientHeader">
+            <i class="fa fa-user"></i> <i class="fa fa-plus"></i><span class="sectionHead">Add New Client</span>
+          <span class="backtomainmenu" (click)="disableclientaddform()"><span class="fa fa-angle-left"></span><span>Back</span></span>
+     
+      </div> -->
+      <div class="panel-heading">
+          <div class="col-md-12" id="AddNewClientHeader">
+            <div class="col-md-11" id="addnewdiv">
+            <span class="sectionHead"> <i class="fa fa-user-plus"></i>ADD NEW CLIENT </span>
+          </div>
+          <div class="col-md-1">
+            <a class="backtomainmenu" (click)="disableclientaddform()"> <i class="fa fa-angle-left"></i> <span class="Clientpgbackbtn"> Back</span></a>
+          </div>
+        </div>
+      </div>
+        <div>
+          <div class="panel-body">
+            <div class="panel" id="panelmargibhide">
+                <form class="form-inline" [formGroup]="AddNewBusinessGroup" (ngSubmit)="AddBusinessGroup(AddNewBusinessGroup.getRawValue())">
+                    <div class="addnewstakeholder">
+                        <div class="col-md-12"><!--starting of col-md-12-->
+                          <div class="col-md-6">
+                            <div class="col-md-3">
+                              <span> <label for="clientName" class="Clientinputlable">BUSINESS GROUP NAME</label></span>
+                            </div>
+                            <div class="col-md-1">
+                            <span>:</span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="clientName" 
+                                class="form-control" 
+                                id="clientName" 
+                                placeholder="Enter BUSINESS GROUP NAME" 
+                                name="clientName" 
+                                formControlName="name"
+                                [ngClass]="{'red-border-class': 
+                                (AddNewBusinessGroup.get('name').touched ||
+                                AddNewBusinessGroup.get('name').dirty) &&
+                                AddNewBusinessGroup.get('name').errors
+                               }">
+                                <span class="help-block" *ngIf="(AddNewBusinessGroup.get('name').touched ||
+                                AddNewBusinessGroup.get('name').dirty) &&
+                                AddNewBusinessGroup.get('name').errors"
+                                >
+                              <span *ngIf="AddNewBusinessGroup.get('name').errors.required">
+                                BUSINESS GROUP NAME is  required.
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('name').errors.minlength">
+                                  BUSINESS UNIT NAME must be greater than 3 charecters
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('name').errors.maxlength">
+                                  BUSINESS UNIT NAME must be smaller than 52 charecters
+                              </span>
+                              </span>
+                               </div><!--end of inner col-md-6-->
+                            
+                          </div><!--end of col-md-6-->
+            
+                          <div class="col-md-6">
+                              <div class="col-md-3">
+                                <span> <label for="shortName" class="Clientinputlable">BUSINESS GROUP SHORT NAME</label></span>
+                              </div>
+                              <div class="col-md-1">
+                              <span>:</span>
+                              </div>
+                              <div class="col-md-6" formGroupName="clientInfo">
+
+                                  <input type="text" 
+                                  class="form-control" 
+                                  id="shortName" 
+                                  placeholder="Enter SHORT NAME" 
+                                  name="ShortName" 
+                                  formControlName="shortName" 
+                                  [ngClass]="{'red-border-class': 
+                                (AddNewBusinessGroup.get('shortName').touched ||
+                                AddNewBusinessGroup.get('shortName').dirty) &&
+                                AddNewBusinessGroup.get('shortName').errors
+                               }">
+                                  <span class="help-block" *ngIf="(AddNewBusinessGroup.get('shortName').touched ||
+                                  AddNewBusinessGroup.get('shortName').dirty) &&
+                                  AddNewBusinessGroup.get('shortName').errors">
+                                <span *ngIf="AddNewBusinessGroup.get('shortName').errors.required">
+                                    SHORT NAME is  required.
+                                </span>
+                                <span *ngIf="AddNewBusinessGroup.get('shortName').errors.minlength">
+                                    SHORT NAME is  required.
+                                </span>
+                                <span *ngIf="AddNewBusinessGroup.get('shortName').errors.maxlength">
+                                    SHORT NAME is  required.
+                                </span>
+                                </span>
+
+                              </div><!--end of inner col-md-6-->
+                            </div><!--end of col-md-6-->
+                        </div><!--end of col-md-12-->
+        
+                    </div>
+
+                    <div class="addnewstakeholder">
+                        <div class="col-md-12"><!--starting of col-md-12-->
+                          <div class="col-md-6">
+                            <div class="col-md-3">
+                              <span> <label for="shortName" class="Clientinputlable" >BUSINESS GROUP SHORT NAME:</label></span>
+                            </div>
+                            <div class="col-md-1">
+                            <span>:</span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text"
+                                 class="form-control"
+                                  id="shortName"
+                                   placeholder="Enter Short Name"
+                                    name="ShortName"
+                                     formControlName="shortName"
+                                     [ngClass]="{'red-border-class': 
+                                     (AddNewBusinessGroup.get('shortName').touched ||
+                                     AddNewBusinessGroup.get('shortName').dirty) &&
+                                     AddNewBusinessGroup.get('shortName').errors
+                                    }"
+                                     >
+                                <span class="help-block" *ngIf="(AddNewBusinessGroup.get('shortName').touched ||
+                                AddNewBusinessGroup.get('shortName').dirty) &&
+                                AddNewBusinessGroup.get('shortName').errors">
+                              <span *ngIf="AddNewBusinessGroup.get('shortName').errors.required">
+                                  SHORT NAME is  required.
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('shortName').errors.minlength">
+                                  SHORT NAME sjould be more than 3 charecters
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('shortName').errors.maxlength">
+                                  SHORT NAME sjould be less than 15 charecters
+                              </span>
+                              </span>
+                               </div><!--end of inner col-md-6-->
+                            
+                          </div><!--end of col-md-6-->
+            
+                          <div class="col-md-6">
+                              <div class="col-md-3" id="REMARKS">
+                                <span> <label for="remarks"  class="Clientinputlable">REMARKS</label></span>
+                              </div>
+                              <div class="col-md-1">
+                              <span>:</span>
+                              </div>
+                              <div class="col-md-6" formGroupName="clientInfo">
+                                  <input type="text" 
+                                  class="form-control" 
+                                  id="remarks" 
+                                  placeholder="Enter REMARKS" 
+                                  name="remarks" 
+                                  formControlName="remarks" 
+                                  [ngClass]="{'red-border-class': 
+                                  (AddNewBusinessGroup.get('remarks').touched ||
+                                  AddNewBusinessGroup.get('remarks').dirty) &&
+                                  AddNewBusinessGroup.get('remarks').errors
+                                 }"
+                                 >
+
+                                  <span class="help-block" *ngIf="(AddNewBusinessGroup.get('remarks').touched ||
+                                AddNewBusinessGroup.get('remarks').dirty) &&
+                                AddNewBusinessGroup.get('remarks').errors">
+                              <span *ngIf="AddNewBusinessGroup.get('remarks').errors.required">
+                                 Remark is  required.
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('remarks').errors.minlength">
+                                  Remark should be more than 3 charecters
+                              </span>
+                              <span *ngIf="AddNewBusinessGroup.get('remarks').errors.maxlength">
+                                 Remark should be less than 15 charecters
+                              </span>
+                              </span>
+
+
+                              </div><!--end of inner col-md-6-->
+                            </div><!--end of col-md-6-->
+                        </div><!--end of col-md-12-->
+        
+                    </div>
+                    <div class="addnewstakeholder">
+                        <div class="col-md-12"><!--starting of col-md-12-->
+                          <div class="col-md-6">
+                            <div class="col-md-3">
+                              <span>    <label class="Clientinputlable">CLIENT NAME</label></span>
+                            </div>
+                            <div class="col-md-1">
+                            <span>:</span>
+                            </div>
+                            <div class="col-md-6" formGroupName="clientInfo">
+                                <select formControlName="clientId">
+                                    <option *ngFor="let client of clientDetails" [ngValue]=""> {{client.clientName}} </option>
+                                  </select> 
+        
+                               </div><!--end of inner col-md-6-->
+                            
+                          </div><!--end of col-md-6-->
+
+                        </div><!--end of col-md-12-->
+        
+                    </div>
+
+                    <div class="addnewClientButtons">
+                        <button type="submit" class="btn btn-info">submit</button> &nbsp;<button class="btn btn-info" (click)="disableclientaddform()">cancel</button>
+        
+                       </div>
+     
+
+
+
+
+
+                  </form>
+
+
+
+
+            </div>
+
+
+             </div>
+        
+              </div>
+              </div>
+        
+    </div>
+</div>
